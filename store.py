@@ -5,7 +5,6 @@ class Task:
         self.address = address
         self.items = items
 
-
     def add_item(self, item, price):
         self.items[item] = price
         print (f"Добавлен товар {item} по цене {price}")
@@ -14,11 +13,20 @@ class Task:
         del self.items[item]
         print (f"Удален товар {item}")
 
+    def get_price(self, item):
+        item = input("Введите название товара: ")
+        if item in self.items:
+            price = self.items[item]
+            print(f"Цена товара {item}: {price}")
+            return price
+        else:
+            print(f"Товар {item} не найден")
+            return None
+
     def change_price(self, item, new_price):
         self.items[item] = new_price
         print (f"Цена товара {item} изменена на {new_price}")
 
-    def update_price(self, item, new_price):
-        self.items[item] = new_price
+
 
 

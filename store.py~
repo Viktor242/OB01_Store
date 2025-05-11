@@ -7,22 +7,26 @@ class Task:
 
     def add_item(self, item, price):
         self.items[item] = price
+        print (f"Добавлен товар {item} по цене {price}")
 
     def remove_item(self, item):
         del self.items[item]
+        print (f"Удален товар {item}")
 
     def get_price(self, item):
-        return self.items[item]
+        item = input("Введите название товара: ")
+        if item in self.items:
+            price = self.items[item]
+            print(f"Цена товара {item}: {price}")
+            return price
+        else:
+            print(f"Товар {item} не найден") 
+            return None
 
-    def update_price(self, item, new_price):
+    def change_price(self, item, new_price):
         self.items[item] = new_price
+        print (f"Цена товара {item} изменена на {new_price}")
 
-    def get_items(self):
-        return self.items
-# Создание словаря товаров
-items = {
-    'apples': 0.5,     # яблоки - $0.5
-    'bananas': 0.75,   # бананы - $0.75
-    'bread': 1.25,     # хлеб - $1.25
-    'milk': 2.0        # молоко - $2.0
-}
+
+
+
