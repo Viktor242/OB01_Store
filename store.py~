@@ -2,12 +2,14 @@ class Store:
     def __init__(self, name, address):
         self.name = name
         self.address = address
-        self.items = {}  # Исправлено с store на items для соответствия методам
+        self.items = {}  # Словарь для хранения товаров
 
+# Добавление товаров
     def add_item(self, item_name, price):
         self.items[item_name] = price
         print(f"Товар {item_name} добавлен в магазин {self.name}")
 
+# Удаление товара
     def remove_item(self, item_name):
         if item_name in self.items:
             del self.items[item_name]
@@ -15,6 +17,7 @@ class Store:
         else:
             print(f"Товар {item_name} не найден в магазине {self.name}")
 
+# Получение цены
     def get_price(self, item_name):
         if item_name in self.items:
             return self.items[item_name]
@@ -22,6 +25,7 @@ class Store:
             print(f"Товар {item_name} не найден в магазине {self.name}")
             return None
 
+# Изменение цены
     def change_price(self, item_name, new_price):
         if item_name in self.items:
             self.items[item_name] = new_price

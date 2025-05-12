@@ -44,6 +44,7 @@ store1.add_item("молоко", 50)
 store2.add_item("Сахар", 120)
 store3.add_item("Крупа", 60)
 
+print(store2.get_price("Сахар"))
 # Удаление товара
 store1.remove_item("молоко")
 
