@@ -1,0 +1,20 @@
+ # Добавлены методы удаления товара
+    def remove_item(self, item):
+        del self.items[item]
+        print(f"Удален товар {item}")
+
+    # Добавлены методы получения цены товара
+    def get_price(self, item):
+        name = input("Введите название товара: ")
+        if item in self.items:
+            price = self.items[item]
+            print(f"Цена товара {item}: {price}")
+            return price
+        else:
+            print(f"Товар {item} не найден")
+            return None
+
+    # Добавлены методы изменения цены товара
+    def change_price(self, item, new_price):
+        self.items[item] = new_price
+        print(f"Цена товара {item} изменена на {new_price}")
